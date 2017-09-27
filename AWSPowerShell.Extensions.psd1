@@ -2,7 +2,7 @@
     # If authoring a script module, the RootModule is the name of your .psm1 file
     RootModule = 'AWSPowerShell.Extensions.psm1'
 
-    Author = 'Cool Person <coolperson@email.local>'
+    Author = 'Trevor Sullivan <tsulli@amazon.com>'
 
     CompanyName = 'Amazon Inc.'
 
@@ -11,9 +11,9 @@
     # Use the New-Guid command to generate a GUID, and copy/paste into the next line
     GUID = '715d80b5-5a63-4410-ae2e-1c9e1399f915'
 
-    Copyright = '2017 Amazon'
+    Copyright = '2017 Amazon Inc.'
 
-    Description = 'Provides value-add extensions on top of AWS'
+    Description = 'Provides value-add extensions on top of AWS PowerShell module. Includes Intellisense / tab-completion, PowerShell Format Types files, and new functions.'
 
     # Minimum PowerShell version supported by this module (optional, recommended)
     # PowerShellVersion = ''
