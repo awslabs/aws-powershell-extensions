@@ -6,7 +6,7 @@
 
     CompanyName = 'Amazon Inc.'
 
-    ModuleVersion = '0.1'
+    ModuleVersion = '0.2'
 
     # Use the New-Guid command to generate a GUID, and copy/paste into the next line
     GUID = '715d80b5-5a63-4410-ae2e-1c9e1399f915'

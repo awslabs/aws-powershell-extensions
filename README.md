@@ -10,7 +10,9 @@ The Amazon Web Services (AWS) Extensions for AWS Tools for PowerShell provide a 
 | EC2               | InstanceId        |
 | EBS               | VolumeId          |
 | VPC               | VpcId             |
+| ECS               | ClusterName       |
 | CloudFormation    | StackName         |
+| Lambda            | FunctionName      |
 
 # License
 
