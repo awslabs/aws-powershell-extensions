@@ -4,6 +4,11 @@ $ScriptBlock = {
     (Get-CCRepositoryList).RepositoryName
 }
 
+<#
+Get-AWSCmdletName -Service CodeCommit |
+    Where-Object -FilterScript { Get-Command -Name $PSItem.CmdletName -ParameterName RepositoryName -ErrorAction Ignore } |
+    ForEach-Object -Process { "'{0}'" -f $PSItem.CmdletName }
+#>
 $Completer = @{
     CommandName = @(
         'Get-CCBlob',
