@@ -6,13 +6,21 @@ The Amazon Web Services (AWS) Extensions for AWS Tools for PowerShell provide a 
 
 * Intellisense / auto-completion for parameter values
 
-| Service           | Parameter         |
-| EC2               | InstanceId        |
-| EBS               | VolumeId          |
-| VPC               | VpcId             |
-| ECS               | ClusterName       |
-| CloudFormation    | StackName         |
-| Lambda            | FunctionName      |
+| Service           | Parameter               |
+|-------------------|-------------------------|
+| EC2               | InstanceId              |
+| EBS               | VolumeId                |
+| VPC               | VpcId                   |
+| ECS               | ClusterName             |
+| CloudFormation    | StackName               |
+| Lambda            | FunctionName            |
+| IAM               | GroupName               |
+| IAM               | PolicyName              |
+| IAM               | UserName                |
+| IAM               | RoleName                |
+| AutoScaling       | LaunchConfigurationName |
+| AutoScaling       | AutoScalingGroupName    |
+| CloudWatch        | Namespace               |
 
 # License
 
