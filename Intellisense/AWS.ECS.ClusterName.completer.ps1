@@ -1,5 +1,5 @@
 $ScriptBlock = {
-  (Get-ECSClusterList).ClusterName
+  Get-ECSClusterList | ForEach-Object -Process { $PSItem.Split('/')[-1] }
 }
 
 <#
