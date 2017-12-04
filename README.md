@@ -18,9 +18,11 @@ The Amazon Web Services (AWS) Extensions for AWS Tools for PowerShell provide a 
 | IAM               | PolicyName              |
 | IAM               | UserName                |
 | IAM               | RoleName                |
+| IAM               | RoleArn                 |
 | AutoScaling       | LaunchConfigurationName |
 | AutoScaling       | AutoScalingGroupName    |
 | CloudWatch        | Namespace               |
+| 
 
 # License
 
