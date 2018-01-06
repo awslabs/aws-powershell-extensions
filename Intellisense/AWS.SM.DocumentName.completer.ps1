@@ -1,5 +1,5 @@
 $ScriptBlock = {
-  (Get-SSMDocumentList).DocumentName
+  (Get-SSMDocumentList).Name
 }
 
 <#
@@ -12,6 +12,27 @@ $Completer = @{
     'Start-SSMAutomationExecution'
   )
   ParameterName = 'DocumentName'
+  ScriptBlock = $ScriptBlock
+}
+Register-ArgumentCompleter @Completer
+
+<#
+Get-Command -Module AWSPowerShell.NetCore -ParameterName Name -Name *SSM*Docu* |
+  ForEach-Object -Process { "'{0}'" -f $PSItem.Name }
+#>
+$Completer = @{
+  CommandName = @(
+    'Edit-SSMDocumentPermission'
+    'Get-SSMDocument'
+    'Get-SSMDocumentDescription'
+    'Get-SSMDocumentPermission'
+    'Get-SSMDocumentVersionList'
+    'New-SSMDocument'
+    'Remove-SSMDocument'
+    'Update-SSMDocument'
+    'Update-SSMDocumentDefaultVersion'
+  )
+  ParameterName = 'Name'
   ScriptBlock = $ScriptBlock
 }
 Register-ArgumentCompleter @Completer
