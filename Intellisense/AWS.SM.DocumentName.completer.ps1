@@ -1,5 +1,6 @@
 $ScriptBlock = {
-  (Get-SSMDocumentList).Name
+  param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+  (Get-SSMDocumentList).Name | Where-Object -FilterScript { $PSItem -match $wordToComplete }
 }
 
 <#
