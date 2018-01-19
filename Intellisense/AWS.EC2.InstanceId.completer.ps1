@@ -7,7 +7,11 @@ $CommandList |
 #>
 
 $ScriptBlock = {
-  (Get-EC2Instance).Instances.InstanceId
+  param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+  $InstanceList = (Get-EC2Instance).Instances | Where-Object -FilterScript {
+    $PSItem.Tag.Value -match $wordToComplete -or $PSItem.InstanceId -match $wordToComplete
+  }
+  $InstanceList.InstanceId
 }
 
 $Completer = @{
