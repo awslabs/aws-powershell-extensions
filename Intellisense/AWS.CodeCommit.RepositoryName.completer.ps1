@@ -30,6 +30,7 @@ $Completer = @{
     ParameterName = 'RepositoryName'
     ScriptBlock = $ScriptBlock
 }
+Register-ArgumentCompleter @Completer
 
 $Completer = @{
     CommandName = @(
