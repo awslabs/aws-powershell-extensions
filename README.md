@@ -22,7 +22,6 @@ The Amazon Web Services (AWS) Extensions for AWS Tools for PowerShell provide a 
 | AutoScaling       | LaunchConfigurationName |
 | AutoScaling       | AutoScalingGroupName    |
 | CloudWatch        | Namespace               |
-| 
 
 ## Type Adapters
 
@@ -36,4 +35,4 @@ or you can simply specify the new members in-line with the command.
 
 # License
 
-Apache 2.0, see `LICENSE.md`.
+Apache 2.0, see `LICENSE.txt`.
