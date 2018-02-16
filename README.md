@@ -49,6 +49,7 @@ or you can simply specify the new members in-line with the command.
 This module provides type adaptations for the following resources:
 
 | Service | .NET Type |
+|-|-|
 | EC2 | Amazon.EC2.Model.Instance |
 
 # License
