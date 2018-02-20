@@ -52,6 +52,35 @@ This module provides type adaptations for the following resources:
 |-|-|
 | EC2 | Amazon.EC2.Model.Instance |
 
+# Installation
+
+To install this module, simply clone the repository locally, and then import the `.psd1` file.
+We are currently looking into publishing this module to the PowerShell Gallery for ease of distribution.
+
+```
+git clone https://github.com/awslabs/aws-powershell-extensions
+Import-Module -Name ./aws-powershell-extensions/AWSPowerShell.Extensions.psd1
+```
+
+# Usage
+
+1. Set your default AWS Region, using the `Set-DefaultAWSRegion` command.
+2. Start calling commands in the AWS Tools for PowerShell, as usual.
+
+Intellisense integrates with your typical usage of the AWS PowerShell module.
+
+## Type Adapters
+
+Type Adapters add extra properties and methods to various .NET object types.
+
+### EC2 Instances
+
+To try out the type adapters for EC2 instances, first create an `.aws`, try out the following command and examine the new properties that are attached to the EC2 instance objects.
+
+```
+(Get-EC2Instance).Instances | Get-Member
+```
+
 # License
 
 Apache 2.0, see `LICENSE.txt`.
