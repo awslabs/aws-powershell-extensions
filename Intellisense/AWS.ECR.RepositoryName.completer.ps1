@@ -12,12 +12,12 @@ $ScriptBlock = {
   [CmdletBinding()]
   param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
 
-  (Get-EC2Vpc).VpcId.Where({ $PSItem -match $wordToComplete })
+  (Get-ECRRepository).RepositoryName.Where({ $PSItem -match $wordToComplete })
 }
 
 $Completer = @{
-  CommandName = (Get-Command -Module AWSPowerShell* -ParameterName VpcId).Name
-  ParameterName = 'VpcId'
+  CommandName = (Get-Command -Module AWSPowerShell* -Name *-ecr* -ParameterName RepositoryName).Name
+  ParameterName = 'RepositoryName'
   ScriptBlock = $ScriptBlock
 }
 Register-ArgumentCompleter @Completer
