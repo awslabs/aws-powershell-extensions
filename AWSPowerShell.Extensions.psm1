@@ -27,10 +27,11 @@ foreach($Script in $TypeAdapterList) {
 }
 #endregion
 
-#region Import private functions
+#region Import private and public functions
 $FunctionList = Get-ChildItem -Path ('{0}/Functions' -f $ModuleRoot) -File -Filter *.ps1 -Recurse
 foreach ($Script in $FunctionList) {
-    
+    & $Script.FullName
 }
 
 Remove-Variable -Name TypeAdapterList, FunctionList, ScriptList
+#endregion
