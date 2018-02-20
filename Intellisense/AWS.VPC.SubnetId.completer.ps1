@@ -15,8 +15,39 @@ $ScriptBlock = {
   (Get-EC2Subnet).SubnetId.Where({ $PSItem -match $wordToComplete })
 }
 
+# (Get-Command -Module AWSPowerShell* -ParameterName SubnetId).Name -replace '.*', '''$0'
 $Completer = @{
-  CommandName = (Get-Command -Module AWSPowerShell* -ParameterName SubnetId).Name
+  CommandName = @(
+    'Edit-DMSReplicationSubnetGroup'
+    'Edit-EC2SubnetAttribute'
+    'Edit-ECCacheSubnetGroup'
+    'Edit-HSMItem'
+    'Edit-RDSDBSubnetGroup'
+    'Edit-RSClusterSubnetGroup'
+    'Get-EC2Subnet'
+    'New-C9EnvironmentEC2'
+    'New-DAXSubnetGroup'
+    'New-DMSReplicationSubnetGroup'
+    'New-EC2Instance'
+    'New-EC2NatGateway'
+    'New-EC2NetworkInterface'
+    'New-EC2VpcEndpoint'
+    'New-ECCacheSubnetGroup'
+    'New-EFSMountTarget'
+    'New-GLUEDevEndpoint'
+    'New-HSM2Cluster'
+    'New-HSMItem'
+    'New-MQBroker'
+    'New-OPSInstance'
+    'New-OWCMServer'
+    'New-RDSDBSubnetGroup'
+    'New-RSClusterSubnetGroup'
+    'New-SMNotebookInstance'
+    'Register-EC2RouteTable'
+    'Register-EC2SubnetCidrBlock'
+    'Remove-EC2Subnet'
+    'Update-DAXSubnetGroup'
+  )
   ParameterName = 'SubnetId'
   ScriptBlock = $ScriptBlock
 }

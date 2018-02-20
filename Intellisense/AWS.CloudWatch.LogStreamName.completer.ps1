@@ -17,8 +17,17 @@ $ScriptBlock = {
   }
 }
 
+# (Get-Command -ParameterName LogStreamName).Name -replace '.*', '''$0'
 $Completer = @{
-  CommandName = (Get-Command -ParameterName LogStreamName).Name
+  CommandName = @(
+    'Get-CWLLogEvents'
+    'Write-CWLLogEvents'
+    'Get-CWLFilteredLogEvent'
+    'Get-CWLLogEvent'
+    'New-CWLLogStream'
+    'Remove-CWLLogStream'
+    'Write-CWLLogEvent'
+  )
   ParameterName = 'LogStreamName'
   ScriptBlock = $ScriptBlock
 }

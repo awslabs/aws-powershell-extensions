@@ -10,21 +10,23 @@ or in the "license" file accompanying this file. This file is distributed on an 
 
 $ScriptBlock = {
   param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
-  (Get-SSMParameterList).Name | Where-Object -FilterScript { $PSItem -match $wordToComplete }
+  Get-EC2SpotFleetRequest | Where-Object -FilterScript {
+    $PSItem.SpotFleetRequestId -match $wordToComplete
+  }
 }
 
-# (Get-Command -Module AWSPowerShell.NetCore -ParameterName Name -Name *SSM*Param*).Name -replace '.*', '''$0'
+<#
+(Get-Command -Module AWSPowerShell* -ParameterName SpotFleetRequestId).Name -replace '.*', '''$0'
+#>
 $Completer = @{
   CommandName = @(
-    'Get-SSMParameterNameList'
-    'Get-SSMParameter'
-    'Get-SSMParameterHistory'
-    'Get-SSMParameterValue'
-    'Remove-SSMParameter'
-    'Remove-SSMParameterCollection'
-    'Write-SSMParameter'
+    'Edit-EC2SpotFleetRequest'
+    'Get-EC2SpotFleetInstance'
+    'Get-EC2SpotFleetRequest'
+    'Get-EC2SpotFleetRequestHistory'
+    'Stop-EC2SpotFleetRequest'
   )
-  ParameterName = 'Name'
+  ParameterName = 'SpotFleetRequestId'
   ScriptBlock = $ScriptBlock
 }
 Register-ArgumentCompleter @Completer

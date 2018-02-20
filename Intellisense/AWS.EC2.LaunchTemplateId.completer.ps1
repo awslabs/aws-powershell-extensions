@@ -18,8 +18,16 @@ $ScriptBlock = {
   $TemplateList.LaunchTemplateId
 }
 
+# (Get-Command -Module AWSPowerShell* -ParameterName LaunchTemplateId).Name -replace '.*', '''$0'
 $Completer = @{
-  CommandName = (Get-Command -Module AWSPowerShell* -ParameterName LaunchTemplateId).Name
+  CommandName = @(
+    'Edit-EC2LaunchTemplate'
+    'Get-EC2Template'
+    'Get-EC2TemplateVersion'
+    'New-EC2LaunchTemplateVersion'
+    'Remove-EC2LaunchTemplate'
+    'Remove-EC2TemplateVersion'
+  )
   ParameterName = 'LaunchTemplateId'
   ScriptBlock = $ScriptBlock
 }

@@ -16,8 +16,25 @@ $ScriptBlock = {
   }
 }
 
+# (Get-Command -Module AWSPowerShell* -ParameterName PolicyArn -Name *IAM*).Name -replace '.*', '''$0'
 $Completer = @{
-  CommandName = (Get-Command -Module AWSPowerShell* -ParameterName PolicyArn -Name *IAM*).Name
+  CommandName = @(
+    'Get-IAMPolicyVersions'
+    'Get-IAMEntitiesForPolicy'
+    'Get-IAMPolicy'
+    'Get-IAMPolicyVersion'
+    'Get-IAMPolicyVersionList'
+    'New-IAMPolicyVersion'
+    'Register-IAMGroupPolicy'
+    'Register-IAMRolePolicy'
+    'Register-IAMUserPolicy'
+    'Remove-IAMPolicy'
+    'Remove-IAMPolicyVersion'
+    'Set-IAMDefaultPolicyVersion'
+    'Unregister-IAMGroupPolicy'
+    'Unregister-IAMRolePolicy'
+    'Unregister-IAMUserPolicy'
+  )
   ParameterName = 'PolicyArn'
   ScriptBlock = $ScriptBlock
 }

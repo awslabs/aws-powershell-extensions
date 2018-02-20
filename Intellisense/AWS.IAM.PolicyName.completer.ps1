@@ -14,8 +14,20 @@ $ScriptBlock = {
   (Get-IAMPolicyList).PolicyName | Where-Object -FilterScript { $PSItem -match $wordToComplete }
 }
 
+# (Get-Command -Module AWSPowerShell.NetCore -ParameterName PolicyName -Name *IAM*).Name -replace '.*', '''$0'
 $Completer = @{
-  CommandName = (Get-Command -Module AWSPowerShell.NetCore -ParameterName PolicyName -Name *IAM*).Name
+  CommandName = @(
+    'Get-IAMGroupPolicy'
+    'Get-IAMRolePolicy'
+    'Get-IAMUserPolicy'
+    'New-IAMPolicy'
+    'Remove-IAMGroupPolicy'
+    'Remove-IAMRolePolicy'
+    'Remove-IAMUserPolicy'
+    'Write-IAMGroupPolicy'
+    'Write-IAMRolePolicy'
+    'Write-IAMUserPolicy'
+  )
   ParameterName = 'PolicyName'
   ScriptBlock = $ScriptBlock
 }

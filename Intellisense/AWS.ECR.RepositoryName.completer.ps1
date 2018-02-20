@@ -15,8 +15,33 @@ $ScriptBlock = {
   (Get-ECRRepository).RepositoryName.Where({ $PSItem -match $wordToComplete })
 }
 
+<#
+(Get-Command -Module AWSPowerShell* -Name *-ecr* -ParameterName RepositoryName).Name -replace '.*', '''$0'
+#>
 $Completer = @{
-  CommandName = (Get-Command -Module AWSPowerShell* -Name *-ecr* -ParameterName RepositoryName).Name
+  CommandName = @(
+    'Complete-ECRLayerUpload'
+    'Get-ECRDownloadUrlForLayer'
+    'Get-ECRImage'
+    'Get-ECRImageBatch'
+    'Get-ECRImageMetadata'
+    'Get-ECRLayerAvailabilityBatch'
+    'Get-ECRLifecyclePolicy'
+    'Get-ECRLifecyclePolicyPreview'
+    'Get-ECRRepository'
+    'Get-ECRRepositoryPolicy'
+    'New-ECRRepository'
+    'Remove-ECRImageBatch'
+    'Remove-ECRLifecyclePolicy'
+    'Remove-ECRRepository'
+    'Remove-ECRRepositoryPolicy'
+    'Send-ECRLayerPart'
+    'Set-ECRRepositoryPolicy'
+    'Start-ECRLayerUpload'
+    'Start-ECRLifecyclePolicyPreview'
+    'Write-ECRImage'
+    'Write-ECRLifecyclePolicy'
+  )
   ParameterName = 'RepositoryName'
   ScriptBlock = $ScriptBlock
 }

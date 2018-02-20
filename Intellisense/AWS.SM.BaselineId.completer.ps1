@@ -19,8 +19,17 @@ $ScriptBlock = {
   $BaselineList.BaselineId
 }
 
+# (Get-Command -Module AWSPowerShell* -ParameterName BaselineId -Name *SSM*).Name -replace '.*', '''$0'
 $Completer = @{
-  CommandName = (Get-Command -Module AWSPowerShell* -ParameterName BaselineId -Name *SSM*).Name
+  CommandName = @(
+    'Get-SSMEffectivePatchesForPatchBaseline'
+    'Get-SSMPatchBaselineDetail'
+    'Register-SSMDefaultPatchBaseline'
+    'Register-SSMPatchBaselineForPatchGroup'
+    'Remove-SSMPatchBaseline'
+    'Unregister-SSMPatchBaselineForPatchGroup'
+    'Update-SSMPatchBaseline'
+  )
   ParameterName = 'BaselineId'
   ScriptBlock = $ScriptBlock
 }

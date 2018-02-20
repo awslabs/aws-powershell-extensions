@@ -17,8 +17,34 @@ $ScriptBlock = {
   }
 }
 
+# (Get-Command -Module AWSPowerShell.NetCore -ParameterName RoleName).Name -replace '.*', '''$0'
 $Completer = @{
-  CommandName = (Get-Command -Module AWSPowerShell.NetCore -ParameterName RoleName).Name
+  CommandName = @(
+    'Get-IAMAttachedRolePolicies'
+    'Get-IAMRolePolicies'
+    'Add-IAMRoleToInstanceProfile'
+    'Get-IAMAttachedRolePolicyList'
+    'Get-IAMInstanceProfileForRole'
+    'Get-IAMRole'
+    'Get-IAMRolePolicy'
+    'Get-IAMRolePolicyList'
+    'Import-EC2Image'
+    'Import-EC2Snapshot'
+    'New-IAMRole'
+    'New-ORGAccount'
+    'New-SMSReplicationJob'
+    'Register-IAMRolePolicy'
+    'Remove-CFServiceLinkedRole'
+    'Remove-IAMRole'
+    'Remove-IAMRoleFromInstanceProfile'
+    'Remove-IAMRolePolicy'
+    'Remove-IAMServiceLinkedRole'
+    'Unregister-IAMRolePolicy'
+    'Update-IAMAssumeRolePolicy'
+    'Update-IAMRoleDescription'
+    'Update-SMSReplicationJob'
+    'Write-IAMRolePolicy'
+  )
   ParameterName = 'RoleName'
   ScriptBlock = $ScriptBlock
 }

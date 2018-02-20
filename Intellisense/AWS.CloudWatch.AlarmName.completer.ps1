@@ -23,8 +23,17 @@ $ScriptBlock = {
   }
 }
 
+# (Get-Command -ParameterName AlarmName).Name -replace '.*', '''$0'
 $Completer = @{
-  CommandName = (Get-Command -ParameterName AlarmName).Name
+  CommandName = @(
+    'Disable-CWAlarmAction'
+    'Enable-CWAlarmAction'
+    'Get-CWAlarm'
+    'Get-CWAlarmHistory'
+    'Remove-CWAlarm'
+    'Set-CWAlarmState'
+    'Write-CWMetricAlarm'
+  )
   ParameterName = 'AlarmName'
   ScriptBlock = $ScriptBlock
 }

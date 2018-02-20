@@ -14,8 +14,39 @@ $ScriptBlock = {
   (Get-CWLLogGroup).LogGroupName | Where-Object -FilterScript { $PSItem -match $wordToComplete }
 }
 
+# (Get-Command -ParameterName LogGroupName).Name -replace '.*', '''$0'
 $Completer = @{
-  CommandName = (Get-Command -ParameterName LogGroupName).Name
+  CommandName = @(
+    'Get-CWLLogEvents'
+    'Get-CWLLogStreams'
+    'Get-CWLMetricFilters'
+    'Get-CWLSubscriptionFilters'
+    'New-EC2FlowLogs'
+    'Write-CWLLogEvents'
+    'Add-CWLLogGroupTag'
+    'Get-CWLFilteredLogEvent'
+    'Get-CWLLogEvent'
+    'Get-CWLLogGroupTag'
+    'Get-CWLLogStream'
+    'Get-CWLMetricFilter'
+    'Get-CWLSubscriptionFilter'
+    'New-CWLExportTask'
+    'New-CWLLogGroup'
+    'New-CWLLogStream'
+    'New-EC2FlowLog'
+    'Register-CWLKmsKey'
+    'Remove-CWLLogGroup'
+    'Remove-CWLLogGroupTag'
+    'Remove-CWLLogStream'
+    'Remove-CWLMetricFilter'
+    'Remove-CWLRetentionPolicy'
+    'Remove-CWLSubscriptionFilter'
+    'Unregister-CWLKmsKey'
+    'Write-CWLLogEvent'
+    'Write-CWLMetricFilter'
+    'Write-CWLRetentionPolicy'
+    'Write-CWLSubscriptionFilter'
+  )
   ParameterName = 'LogGroupName'
   ScriptBlock = $ScriptBlock
 }
