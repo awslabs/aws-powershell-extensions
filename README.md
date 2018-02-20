@@ -15,14 +15,16 @@ are governed by the IAM credentials profile that is currently active.
 | AutoScaling       | LaunchConfigurationName |
 | AutoScaling       | AutoScalingGroupName    |
 | CloudFormation    | StackName               |
-| CloudWatch        | Namespace               |
+| CloudWatch        | AlarmName               |
 | CloudWatch        | LogGroupName            |
 | CloudWatch        | LogStreamName           |
+| CloudWatch        | Namespace               |
 | CodeCommit        | RepositoryName          |
 | EC2               | VolumeId                |
 | EC2               | InstanceId              |
 | ECS               | ClusterName             |
 | ECS               | TaskDefinition          |
+| ECR               | RepositoryName          |
 | IAM               | GroupName               |
 | IAM               | InstanceProfileName     |
 | IAM               | InstanceProfileArn      |
@@ -33,8 +35,10 @@ are governed by the IAM credentials profile that is currently active.
 | IAM               | UserName                |
 | Lambda            | FunctionName            |
 | S3                | BucketName              |
+| Systems Manager   | BaselineId              |
 | Systems Manager   | DocumentName            |
-| S3                | ParameterName           |
+| Systems Manager   | ParameterName           |
+| VPC               | SubnetId                |
 | VPC               | VpcId                   |
 
 ## Type Adapters
