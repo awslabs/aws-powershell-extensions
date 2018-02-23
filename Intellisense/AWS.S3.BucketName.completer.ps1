@@ -9,7 +9,10 @@ or in the "license" file accompanying this file. This file is distributed on an 
 #>
 
 $ScriptBlock = {
-  (Get-S3Bucket).BucketName
+  [CmdletBinding()]
+  param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+
+  (Get-S3Bucket).BucketName | Where-Object -FilterScript { $PSItem -match $wordToComplete }
 }
 
 <#
