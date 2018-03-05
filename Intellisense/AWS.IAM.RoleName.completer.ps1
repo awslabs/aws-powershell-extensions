@@ -11,10 +11,11 @@ or in the "license" file accompanying this file. This file is distributed on an 
 $ScriptBlock = {
   param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
 
-  Get-IAMRoleList | Where-Object -FilterScript { 
+  $RoleList = Get-IAMRoleList | Where-Object -FilterScript { 
     $PSItem.RoleName -match $wordToComplete -or
     $PSItem.Description -match $wordToComplete
   }
+  $RoleList.RoleName
 }
 
 # (Get-Command -Module AWSPowerShell.NetCore -ParameterName RoleName).Name -replace '.*', '''$0'
