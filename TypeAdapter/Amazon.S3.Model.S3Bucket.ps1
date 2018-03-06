@@ -11,8 +11,8 @@ or in the "license" file accompanying this file. This file is distributed on an 
 $TypeName = 'Amazon.S3.Model.S3Bucket'
 
 @(
-  # Adds a Region property to all Amazon EC2 instance objects.
-  # The region is simply parsed from the automatically-assigned, internal DNS name of the EC2 instance.
+  # Adds a Region property to all Amazon S3Bucket objects.
+  # If the Region returned is null, then it the S3 Bucket exists in the us-east-1 region.
   @{
     Force = $true
     TypeName = $TypeName
