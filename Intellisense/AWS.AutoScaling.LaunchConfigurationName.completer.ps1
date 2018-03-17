@@ -9,7 +9,9 @@ or in the "license" file accompanying this file. This file is distributed on an 
 #>
 
 $ScriptBlock = {
-  (Get-ASLaunchConfiguration).LaunchConfigurationName
+  param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+
+  (Get-ASLaunchConfiguration).LaunchConfigurationName | Where-Object -FilterScript { $PSItem -match $wordToComplete }
 }
 
 <#

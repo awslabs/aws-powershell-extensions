@@ -9,7 +9,9 @@ or in the "license" file accompanying this file. This file is distributed on an 
 #>
 
 $ScriptBlock = {
-  (Get-ASAutoScalingGroup).AutoScalingGroupName
+  param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+
+  (Get-ASAutoScalingGroup).AutoScalingGroupName | Where-Object -FilterScript { $PSItem -match $wordToComplete }
 }
 
 <#

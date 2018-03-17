@@ -9,7 +9,9 @@ or in the "license" file accompanying this file. This file is distributed on an 
 #>
 
 $ScriptBlock = {
-  (Get-CFNStack).StackName
+  param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+
+  (Get-CFNStack).StackName | Where-Object -FilterScript { $PSItem -match $wordToComplete }
 }
 
 <#
