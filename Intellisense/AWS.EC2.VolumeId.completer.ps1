@@ -9,7 +9,9 @@ or in the "license" file accompanying this file. This file is distributed on an 
 #>
 
 $ScriptBlock = {
-  (Get-EC2Volume).VolumeId
+  param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+
+  (Get-EC2Volume).VolumeId | Where-Object -FilterScript { $PSItem -match $wordToComplete }
 }
 
 <#
