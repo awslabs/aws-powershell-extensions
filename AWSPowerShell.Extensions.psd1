@@ -16,7 +16,7 @@ or in the "license" file accompanying this file. This file is distributed on an 
 
     CompanyName = 'Amazon Inc.'
 
-    ModuleVersion = '0.2.6'
+    ModuleVersion = '0.2.8'
 
     # Use the New-Guid command to generate a GUID, and copy/paste into the next line
     GUID = '715d80b5-5a63-4410-ae2e-1c9e1399f915'
