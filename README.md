@@ -79,7 +79,20 @@ Type Adapters add extra properties and methods to various .NET object types.
 
 ### EC2 Instances
 
-To try out the type adapters for EC2 instances, first create an `.aws`, try out the following command and examine the new properties that are attached to the EC2 instance objects.
+To try out the type adapters for EC2 instances, first create an `.awskeys.json` file with the following structure. This creates a mapping between your private key files and EC2 public key pairs, so that you can perform remote commands, via SSH, against your EC2 instances.
+
+**TODO**: Add details about creating PowerShell Remoting sessions with the EC2 instance `RemoteSession` property.
+
+#### Example ~/.awskeys.json
+```
+{
+  "us-west-2": {
+    "Trevor": "~/mysshkey.pem"
+  }
+}
+```
+
+Then, try out the following command and examine the new properties that are attached to the EC2 instance objects.
 
 ```
 (Get-EC2Instance).Instances | Get-Member
