@@ -10,36 +10,7 @@ One of the predominant features of this PowerShell module is the dynamic Intelli
 that's based on the resources provisioned in your AWS account. Intellisense results
 are governed by the IAM credentials profile that is currently active.
 
-| Service           | Parameter               |
-|-------------------|-------------------------|
-| AutoScaling       | LaunchConfigurationName |
-| AutoScaling       | AutoScalingGroupName    |
-| CloudFormation    | StackName               |
-| CloudWatch        | AlarmName               |
-| CloudWatch        | LogGroupName            |
-| CloudWatch        | LogStreamName           |
-| CloudWatch        | Namespace               |
-| CodeCommit        | RepositoryName          |
-| EC2               | VolumeId                |
-| EC2               | InstanceId              |
-| ECS               | ClusterName             |
-| ECS               | TaskDefinition          |
-| ECR               | RepositoryName          |
-| IAM               | GroupName               |
-| IAM               | InstanceProfileName     |
-| IAM               | InstanceProfileArn      |
-| IAM               | GroupName               |
-| IAM               | PolicyName              |
-| IAM               | RoleName                |
-| IAM               | RoleArn                 |
-| IAM               | UserName                |
-| Lambda            | FunctionName            |
-| S3                | BucketName              |
-| Systems Manager   | BaselineId              |
-| Systems Manager   | DocumentName            |
-| Systems Manager   | ParameterName           |
-| VPC               | SubnetId                |
-| VPC               | VpcId                   |
+To see which services and parameters are supported with Intellisense, please examine the `./Intellisense` directory under the AWS PowerShell Extensions module directory.
 
 ## Type Adapters
 
