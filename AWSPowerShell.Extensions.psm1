@@ -11,7 +11,7 @@ or in the "license" file accompanying this file. This file is distributed on an 
 $ModuleRoot = $PSScriptRoot
 
 #region Import Intellisense
-$ScriptList = Get-ChildItem -Path ('{0}/Intellisense' -f $ModuleRoot) -File -Filter *.ps1
+$ScriptList = Get-ChildItem -Path ('{0}/Intellisense' -f $ModuleRoot) -File -Filter *.completer.ps1
 foreach ($Script in $ScriptList) {
     & $Script.FullName
 }
