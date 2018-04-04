@@ -14,6 +14,7 @@ $ScriptBlock = {
   (Get-CWAlarm).AlarmName | Where-Object -FilterScript {
     $PSItem -match $wordToComplete
   } | ForEach-Object -Process {
+    ### NOTE: If CloudWatch Alarm name has spaces, then add single quotes around it
     if ($PSItem -match '\s') {
       "'{0}'" -f $PSItem
     }
