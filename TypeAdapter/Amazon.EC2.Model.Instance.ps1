@@ -19,7 +19,11 @@ $TypeName = 'Amazon.EC2.Model.Instance'
     MemberType = 'ScriptProperty'
     MemberName = 'Region'
     Value = {
-      return $this.PrivateDnsName.Split('.')[1]
+      $Region = $this.PrivateDnsName.Split('.')[1]
+      if ($Region -eq 'ec2') {
+        return 'us-east-1'
+      }
+      return 
     }
   }
   # Provides a mechanism to map SSH keys on the local filesystem to EC2 instances, depending on the AWS Region 
